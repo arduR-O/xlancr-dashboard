@@ -11,7 +11,7 @@ const Dashboard = () => {
   // Generate dummy data for 10 cards
   const generateDummyData = (): CardData[] => {
     const dummyData: CardData[] = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
       const earning = Math.floor(Math.random() * 10000); // Generate random earning
       const profit = Math.floor(Math.random() * 50); // Generate random profit
       dummyData.push({ earning, profit });
@@ -30,7 +30,7 @@ const Dashboard = () => {
       </div>
       <div className="flex flex-wrap gap-7">
         {dummyCardData.map((data, index) => (
-          <Card key={index} earning={data.earning} profit={data.profit} />
+          <Card data={data} key={index} />
         ))}
       </div>
     </div>

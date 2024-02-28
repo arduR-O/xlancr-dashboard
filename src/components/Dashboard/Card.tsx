@@ -1,4 +1,12 @@
-const Card = ({ earning, profit }: { earning: number; profit: number }) => {
+interface CardData {
+  earning: number;
+  profit: number;
+}
+
+
+const Card = ({ data }: { data:CardData }) => {
+  const earning = data.earning;
+  const profit = data.profit;
   return (
     //   background: linear-gradient(153.85deg, rgba(81, 81, 81, 0.24) 2.62%, rgba(255, 255, 255, 0) 124.35%);
 
