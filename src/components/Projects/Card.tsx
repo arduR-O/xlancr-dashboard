@@ -1,27 +1,32 @@
 import Image from "next/image";
-
-const Card = ({
-  companyImageURL,
-  projectType,
-  projectName,
-  duration,
-  progress,
-  dueDate,
-  projectNumber,
-}: {
+import Link from "next/link";
+interface ProjectData {
   companyImageURL: string;
-  projectType: string;
-  projectName: string;
+  dueDate: string;
   duration: number;
   progress: number;
-  dueDate: string;
+  projectName: string;
+  projectType: string;
+  projectID: number;
+}
+const Card = ({
+  data, projectNumber
+}: {
+  data: ProjectData;
   projectNumber: number;
 }) => {
+  const companyImageURL = data.companyImageURL;
+  const dueDate = data.dueDate;
+  const duration = data.duration;
+  const progress = data.progress;
+  const projectName = data.projectName;
+  const projectType = data.projectType;
+  const projectID = data.projectID;
+  
   return (
     //   background: linear-gradient(153.85deg, rgba(81, 81, 81, 0.24) 2.62%, rgba(255, 255, 255, 0) 124.35%);
-
-    <div>
-      <div className="bg-project-bg rounded-2xl min-w-64 min-h-52 shadow-3xl flex flex-col justify-between px-6 py-4 gap-7">
+      <Link href={`/project/${encodeURIComponent(projectID)}`}>
+      <div className="bg-project-bg rounded-2xl min-w-64 min-h-52 shadow-3xl flex flex-col justify-between px-6 py-4 gap-7 hover:brightness-150 hover:saturate-200">
         <div className="flex justify-between max-h-[33.3%] justify-items-center">
           <Image
             src={companyImageURL}
@@ -63,7 +68,7 @@ const Card = ({
           </div>
         </div>
       </div>
-    </div>
+      </Link>
   );
 };
 
