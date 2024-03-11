@@ -8,12 +8,12 @@ interface ProjectData {
   projectName: string;
   projectType: string;
   projectID: number;
+  projectNumber: number;
 }
 const Card = ({
-  data, projectNumber
+  data
 }: {
   data: ProjectData;
-  projectNumber: number;
 }) => {
   const companyImageURL = data.companyImageURL;
   const dueDate = data.dueDate;
@@ -22,6 +22,7 @@ const Card = ({
   const projectName = data.projectName;
   const projectType = data.projectType;
   const projectID = data.projectID;
+  const projectNumber = data.projectNumber;
   
   return (
     //   background: linear-gradient(153.85deg, rgba(81, 81, 81, 0.24) 2.62%, rgba(255, 255, 255, 0) 124.35%);

@@ -10,6 +10,7 @@ interface ProjectData {
   projectName: string;
   projectType: string;
   projectID: number;
+  projectNumber: number;
 }
 
 const Projects = () => {
@@ -26,7 +27,8 @@ const Projects = () => {
         progress: Math.floor(Math.random() * 100), // Generate random progress
         projectName,
         projectType: "Project type",
-        projectID: projectNumber
+        projectID: projectNumber,
+        projectNumber: projectNumber
       });
     }
     return dummyData;
@@ -47,7 +49,6 @@ const Projects = () => {
           <Card
             key={index}
             data={data}
-            projectNumber = {index + 1}
           />
         ))}
       </div>
