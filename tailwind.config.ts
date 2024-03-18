@@ -7,6 +7,30 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      '3xl': {'max': '1535px'},
+      // => @media (max-width: 1535px) { ... }
+      '2xl': {'max': '1470px'},
+      // => @media (max-width: 1470px) { ... }
+
+      'xl': {'max': '1279px'},
+      // => @media (max-width: 1279px) { ... }
+
+      'lg': {'max': '1090px'},
+      // => @media (max-width: 1023px) { ... }
+      
+      'lg-min': {'max': '900px'},
+      // => @media (max-width: 900px) { ... }
+
+      'md': {'max': '767px'},
+      // => @media (max-width: 767px) { ... }
+
+      'sm': {'max': '639px'},
+      // => @media (max-width: 639px) { ... }
+      'sm-min': {'max': '490px'},
+
+      'xs': {'max': '400px'},
+    },
     extend: {
       colors: {
         grey: "#3D3D3D",
